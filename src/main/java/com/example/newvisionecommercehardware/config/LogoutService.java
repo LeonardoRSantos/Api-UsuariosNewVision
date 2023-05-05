@@ -1,7 +1,7 @@
 package com.example.newvisionecommercehardware.config;
 
 
-import com.example.newvisionecommercehardware.token.TokenRepository;
+import com.example.newvisionecommercehardware.repository.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

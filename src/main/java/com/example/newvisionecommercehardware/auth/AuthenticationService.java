@@ -2,10 +2,11 @@ package com.example.newvisionecommercehardware.auth;
 
 
 import com.example.newvisionecommercehardware.config.JwtService;
+import com.example.newvisionecommercehardware.model.Role;
 import com.example.newvisionecommercehardware.model.User;
 import com.example.newvisionecommercehardware.repository.UserRepository;
 import com.example.newvisionecommercehardware.token.Token;
-import com.example.newvisionecommercehardware.token.TokenRepository;
+import com.example.newvisionecommercehardware.repository.TokenRepository;
 import com.example.newvisionecommercehardware.token.TokenType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,7 +37,7 @@ public class AuthenticationService {
         .telefone(request.getTelefone())
         .email(request.getEmail())
         .password(passwordEncoder.encode(request.getPassword()))
-        .role(request.getRole())
+        .role(request.getRole() != null ? request.getRole() : Role.USER)
         .build();
     var savedUser = repository.save(user);
     var jwtToken = jwtService.generateToken(user);

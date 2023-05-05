@@ -1,5 +1,6 @@
-package com.example.newvisionecommercehardware.token;
+package com.example.newvisionecommercehardware.repository;
 
+import com.example.newvisionecommercehardware.token.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

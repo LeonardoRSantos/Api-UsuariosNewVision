@@ -14,15 +14,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
-@RequiredArgsConstructor
+@Configuration//Classe de configuração e que contém definições de beans que serão gerenciados pelo Spring.
+@RequiredArgsConstructor//Construtor da classe deve ser gerado automaticamente e receber todos os campos que são final e não inicializados na declaração.
 public class ApplicationConfig {
 
   private final UserRepository repository;
 
   @Bean
-  public UserDetailsService userDetailsService() {
-    return username -> repository.findByEmail(username)
+  public UserDetailsService userDetailsService() {// responsável por buscar um usuário no repositório com base no (email) do usuário.
+      return username -> repository.findByEmail(username)
         .orElseThrow(() -> new UsernameNotFoundException("User not found"));
   }
 
