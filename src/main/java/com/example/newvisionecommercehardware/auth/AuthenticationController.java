@@ -14,7 +14,7 @@ import java.io.IOException;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 //@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"}, allowedHeaders = "*")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080", " https://new-vision-ecommercejava.herokuapp.com"}, allowedHeaders = "*")
+@CrossOrigin(origins = {"https://leonardorsantos.github.io","http://localhost:4200", "http://localhost:8080", " https://new-vision-ecommercejava.herokuapp.com"}, allowedHeaders = "*")
 public class AuthenticationController {
 
   private final AuthenticationService service;
