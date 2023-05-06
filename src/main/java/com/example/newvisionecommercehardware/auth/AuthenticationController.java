@@ -13,7 +13,8 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"}, allowedHeaders = "*")
+//@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"}, allowedHeaders = "*")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080", "https://api-usuariosnewvision-production.up.railway.app"}, allowedHeaders = "*")
 public class AuthenticationController {
 
   private final AuthenticationService service;
